@@ -17,7 +17,7 @@ Or see it live! [here](https://samanthaming.github.io/not-fancy-clock/)
 
 <br>
 
-![App](images/not-fancy-pokemon-speaks.png)
+![App](images/not-fancy-clock.png)
 
 # Notes
 
