@@ -1,0 +1,208 @@
+/* ==================
+ *  VARIABLES
+ * ================== */
+:root {
+  --color-black: hsl(0, 0%, 30%);
+  --color-black-light: hsl(0, 0%, 60%);
+  --color-gray: hsl(0, 0%, 90%);
+  --color-white: hsl(0, 0%, 98%);
+
+  --color-red: hsl(348, 100%, 61%);
+  --color-orange: hsl(34, 100%, 50%);
+
+  --color-yellow-inverse: hsl(48, 100%, 77%);
+  --color-red-inverse: hsl(348, 100%, 71%);
+  --color-orange-inverse: hsl(34, 100%, 70%);
+
+  --color-digit: hsl(0, 0%, 45%);
+  --color-background: #d6e0e2;
+  --color-title: hsl(190, 17.1%, 40%);
+}
+/* ==================
+ *  BASE
+ * ================== */
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: var(--color-black);
+}
+.outer-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--color-background);
+  padding-top: 5%;
+}
+.inner-container {
+  background: var(--color-white);
+  padding: 30px;
+  border-radius: 10px;
+}
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  color: var(--color-white);
+  text-shadow: 2px 3px 3px var(--color-title);
+}
+/* ==================
+ *  Analog Clock
+ * ================== */
+
+/* *** CLOCK *** */
+
+.analog-clock {
+  border: 10px solid var(--color-red-inverse);
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+.analog-clock-face {
+  height: 100%;
+  transform: translateY(50%);
+}
+.analog-clock-face::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  background: white;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--color-red-inverse);
+  border-radius: 50%;
+}
+
+/* *** DOTS *** */
+
+.dots:nth-of-type(1) {
+  transform: rotate(0deg);
+}
+.dots:nth-of-type(2) {
+  transform: rotate(90deg);
+}
+.dots:nth-of-type(3) {
+  transform: rotate(30deg);
+}
+.dots:nth-of-type(4) {
+  transform: rotate(60deg);
+}
+.dots:nth-of-type(5) {
+  transform: rotate(120deg);
+}
+.dots:nth-of-type(6) {
+  transform: rotate(150deg);
+}
+.dots::before, .dots::after {
+  content: '';
+  position: absolute;
+  background: var(--color-orange-inverse);
+  width: 7px;
+  height: 2px;
+  border-radius: 30px;
+  top: -3px;
+}
+.dots::after {
+  left: 7px;
+}
+.dots::before {
+  right: 7px;
+}
+.dots:nth-of-type(1)::before,
+.dots:nth-of-type(1)::after,
+.dots:nth-of-type(2)::before,
+.dots:nth-of-type(2)::after {
+  background: var(--color-orange);
+  width: 10px;
+  height: 4px;
+}
+
+/* *** HAND *** */
+
+.hand {
+  background: var(--color-black-light);
+  transform-origin: 100%;
+  border-radius: 10px;
+  position: absolute;
+  right: 50%;
+}
+.hand.hour-hand {
+  width: 25%;
+  height: 5px;
+  background: var(--color-black);
+  z-index: 1;
+}
+.hand.min-hand {
+  width: 37%;
+  height: 4px;
+}
+.hand.sec-hand {
+  background: var(--color-red-inverse);
+  width: 39%;
+  height: 2px;
+}
+
+/* ==================
+ *  Digital Clock
+ * ================== */
+
+.digital-clock {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+.digit {
+  margin: 0 5px;
+  height: 80px;
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-yellow-inverse);
+  box-shadow: 1px 3px 5px var(--color-gray);
+  border-radius: 5px;
+  color: var(--color-digit);
+}
+
+/* ==================
+ *  SOCIAL MEDIA
+ * ================== */
+.social-media-footer {
+  --font-color: hsl(190, 17.1%, 73%);
+}
+.social-columns {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.9375rem;
+  padding-bottom: 0.625rem;
+  font-size: 0.7rem;
+  color: var(--font-color);
+  width: 100%;
+}
+.social-columns .column {
+  padding: 0.4rem;
+  text-align: center;
+}
+.social-columns a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+.social-columns a:hover {
+  text-decoration: underline;
+}
+/* GITHUB */
+.github-code {
+  color: var(--font-color);
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 0.625rem;
+}
+.github-code a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+.github-code a:hover {
+   text-decoration: underline;
+}
