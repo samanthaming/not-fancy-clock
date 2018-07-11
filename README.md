@@ -80,7 +80,7 @@ methods: {
 }
 ```
 
-## Add a leading `0` to our time
+## 3: Add a leading `0` to our time
 
 By default, there is no leading `0` for our time.
 
